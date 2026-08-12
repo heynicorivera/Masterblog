@@ -30,12 +30,14 @@ def generate_id(posts):
 
 @app.route('/')
 def index():
+    """Show the home page with all blog posts."""
     blog_posts = load_posts()
     return render_template('index.html', posts=blog_posts)
 
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
+    """Show the add form (GET) or save a new blog post (POST)."""
     if request.method == 'POST':
         blog_posts = load_posts()
         new_post = {
@@ -49,6 +51,18 @@ def add():
         return redirect(url_for('index'))
 
     return render_template('add.html')
+
+
+@app.route('/delete/<int:post_id>')
+def delete(post_id):
+    """Delete the blog post with the given id and go back home."""
+    blog_posts = load_posts()
+    for post in blog_posts:
+        if post["id"] == post_id:
+            blog_posts.remove(post)
+            break
+    save_posts(blog_posts)
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
