@@ -1,7 +1,6 @@
 import json
 
 from flask import Flask, redirect, render_template, request, url_for
-from pylint.checkers.utils import is_registered_in_singledispatch_function
 
 app = Flask(__name__)
 
