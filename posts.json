@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "id": 1,
+        "author": "Nico",
+        "title": "Why I'm learning Flask",
+        "content": "Flask turns a Python file into a web server with a few lines. This blog is my first app built with it \u2014 routes, templates, and a JSON file doing the work of a database."
+    },
+    {
+        "id": 2,
+        "author": "Nico",
+        "title": "CRUD explained in one post",
+        "content": "Create, Read, Update, Delete \u2014 every app you use does these four things. This blog does them with a list of dictionaries saved to a JSON file."
+    },
+    {
+        "id": 3,
+        "author": "Nico",
+        "title": "What the id field taught me",
+        "content": "Every post carries a unique id. Titles can repeat and content can change, but the id is how the delete and update routes know exactly which post you mean."
+    },
+    {
+        "id": 4,
+        "author": "Nico",
+        "title": "Templates are recipes",
+        "content": "A template with Jinja tags is just a recipe. Flask is the cook \u2014 render_template fills in the real data before the page reaches your browser."
+    }
+]
